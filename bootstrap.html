@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Styled Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @media (max-width: 768px) {
+      .d-flex {
+        flex-direction: column !important;
+        align-items: center;
+      }
+      .relative-absolute-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sticky-box {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .row .col-md-4 {
+        width: 100% !important;
+      }
+      .styled-box, .fixed-box {
+        font-size: 14px;
+        text-align: center;
+      }
+      .absolute-box {
+        position: static !important;
+      }
+    }
+  </style>
+</head>
+<body class="container mt-4">
+  <div class="styled-box mb-3">Styled Box with Shadow, Opacity, and Border Radius</div>
+  <div class="fixed-box">I'm Fixed!</div>
+  
+  <div class="section mb-4">
+    <h2>Relative and Absolute Positioning</h2>
+    <div class="relative-absolute-container">
+      <div class="relative-box">I'm Relative!</div>
+      <div class="absolute-box">I'm Absolute!</div>
+    </div>
+  </div>
+
+  <div class="section mb-4">
+    <h2>Sticky Positioning</h2>
+    <div class="sticky-box">I'm Sticky!</div>
+    <div style="height: 800px; background: lightgray; margin-top: 20px;">
+      Scroll down to see the sticky box stick to the top.
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mb-3">
+    <div class="p-3 bg-success text-white border">Box 1</div>
+    <div class="p-3 bg-success text-white border">Box 2</div>
+    <div class="p-3 bg-success text-white border">Box 3</div>
+  </div>
+
+  <div class="d-flex justify-content-around mb-3">
+    <div class="p-3 bg-primary text-white border">Box 1</div>
+    <div class="p-3 bg-primary text-white border">Box 2</div>
+    <div class="p-3 bg-primary text-white border">Box 3</div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-md-4"><div class="p-3 bg-danger text-white border">Box 1</div></div>
+    <div class="col-md-4"><div class="p-3 bg-info text-white border">Box 2</div></div>
+    <div class="col-md-4"><div class="p-3 bg-secondary text-white border">Box 3</div></div>
+    <div class="col-md-4"><div class="p-3 bg-white text-black border">Box 4</div></div>
+    <div class="col-md-4"><div class="p-3 bg-warning text-white border">Box 5</div></div>
+    <div class="col-md-4"><div class="p-3 bg-primary text-white border">Box 6</div></div>
+  </div>
+
+  <div class="mt-5">
+    <h2 class="text-center">Bootstrap Alert and Button</h2>
+    <div class="alert alert-success text-center" role="alert">
+      This is a Bootstrap success alert to enhance user experience!
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary">Click Me</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

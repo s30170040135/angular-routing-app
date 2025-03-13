@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types & Operators</title>
+</head>
+<body>
+
+    <h1>JavaScript Data Types & Operators</h1>
+
+    <button onclick="showNumbers()">Show Numbers</button>
+    <button onclick="showText()">Show Text</button>
+    <button onclick="showBoolean()">Show Boolean</button>
+    <button onclick="showArray()">Show Array</button>
+    <button onclick="showObject()">Show Object</button>
+    <button onclick="performOperations()">Perform Calculations</button>
+
+    <h2>Output:</h2>
+    <div id="output" style="border: 1px solid black; padding: 10px; min-height: 50px;"></div>
+
+    <script>
+        // Data Types
+        let num = 10;               // Number
+        let text = "Hello";         // String
+        let isTrue = true;          // Boolean
+        let numbers = [1, 2, 3];    // Array
+        let person = { name: "John", age: 30 }; // Object
+        let unknown;                // Undefined
+        let empty = null;           // Null
+
+        function showNumbers() {
+            document.getElementById("output").innerHTML = `Number: ${num}`;
+        }
+
+        function showText() {
+            document.getElementById("output").innerHTML = `Text: ${text} JavaScript!`;
+        }
+
+        function showBoolean() {
+            document.getElementById("output").innerHTML = `Boolean Value: ${isTrue}`;
+        }
+
+        function showArray() {
+            document.getElementById("output").innerHTML = `Array: ${numbers.join(", ")}`;
+        }
+
+        function showObject() {
+            document.getElementById("output").innerHTML = `Person Name: ${person.name}, Age: ${person.age}`;
+        }
+
+        function performOperations() {
+            let output = `
+                <p><strong>Addition:</strong> ${10 + 5}</p>
+                <p><strong>Subtraction:</strong> ${10 - 5}</p>
+                <p><strong>Multiplication:</strong> ${10 * 5}</p>
+                <p><strong>Division:</strong> ${10 / 5}</p>
+                <p><strong>Remainder:</strong> ${10 % 5}</p>
+                <p><strong>Power:</strong> ${10 ** 5}</p>
+                <p><strong>Greater than:</strong> ${10 > 5}</p>
+                <p><strong>Equal:</strong> ${10 === 5}</p>
+            `;
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>

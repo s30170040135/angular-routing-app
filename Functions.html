@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Operations</title>
+    
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+</head>
+<body class="container mt-4 text-center">
+
+    <h2 class="mb-4 text-primary">Number Operations</h2>
+
+    <!-- Buttons for performing operations using Bootstrap styling -->
+    <div class="row justify-content-center">
+        
+        <div class="col-md-8">
+            <button class="btn btn-primary m-2" onclick="addition()">Addition</button>
+            <button class="btn btn-secondary m-2" onclick="subtraction()">Subtraction</button>
+            <button class="btn btn-success m-2" onclick="findEvenNumbers()">Find Even Numbers</button>
+            <button class="btn btn-danger m-2" onclick="findOddNumbers()">Find Odd Numbers</button>
+            <button class="btn btn-warning m-2" onclick="findPrimeNumbers()">Find Prime Numbers</button>
+            <button class="btn btn-info m-2" onclick="findArmstrongNumbers()">Find Armstrong Numbers</button>
+        </div>
+    </div>
+
+    <!-- Output display area -->
+    <div class="mt-4 p-3 border rounded bg-light">
+        <h4 class="text-dark">Result:</h4>
+        <div id="output" class="fw-bold text-success"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // (a) Provide variables and perform addition, subtraction
+        let num1 = 20;
+        let num2 = 10;
+        let numbers = [2, 3, 4, 5, 10, 15, 153, 371, 407, 11];
+
+        // Function to display output dynamically
+        function displayResult(text) {
+            document.getElementById("output").innerHTML = text;
+        }
+
+        // (a) Non-parameterized function without return - Addition
+        function addition() {
+            displayResult("Addition: " + (num1 + num2));
+        }
+
+        // (a) Non-parameterized function without return - Subtraction
+        function subtraction() {
+            displayResult("Subtraction: " + (num1 - num2));
+        }
+
+        // (b) Find even numbers (Non-parameterized without return)
+        function findEvenNumbers() {
+            let evens = numbers.filter(num => num % 2 === 0);
+            displayResult("Even Numbers: " + evens.join(", "));
+        }
+
+        // (b) Find odd numbers (Non-parameterized without return)
+        function findOddNumbers() {
+            let odds = numbers.filter(num => num % 2 !== 0);
+            displayResult("Odd Numbers: " + odds.join(", "));
+        }
+
+        // (b) Check if a number is prime (Parameterized with return)
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        // (b) Find prime numbers (Parameterized without return)
+        function findPrimeNumbers() {
+            let primes = numbers.filter(num => isPrime(num));
+            displayResult("Prime Numbers: " + primes.join(", "));
+        }
+
+        // (b) Check if a number is Armstrong (Parameterized with return)
+        function isArmstrong(num) {
+            let sum = 0, temp = num, digits = num.toString().length;
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += Math.pow(digit, digits);
+                temp = Math.floor(temp / 10);
+            }
+            return sum === num;
+        }
+
+        // (b) Find Armstrong numbers (Parameterized without return)
+        function findArmstrongNumbers() {
+            let armstrongs = numbers.filter(num => isArmstrong(num));
+            displayResult("Armstrong Numbers: " + armstrongs.join(", "));
+        }
+
+    </script>
+
+    <!-- Bootstrap JS for interactive elements (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

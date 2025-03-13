@@ -1,0 +1,51 @@
+.styled-box {
+    background: lightseagreen;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: lightcoral;
+    padding: 20px;
+    border: 2px solid darkred;
+    z-index: 1000;
+  }
+  
+  .relative-absolute-container {
+    height: 200px;
+    background: lightblue;
+    position: relative;
+  }
+  
+  .relative-box {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background: lightgreen;
+    padding: 20px;
+  }
+  
+  .absolute-box {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: lightyellow;
+    padding: 20px;
+  }
+  
+  .sticky-box {
+    position: sticky;
+    top: 0;
+    background: lightpink;
+    padding: 20px;
+    z-index: 1;
+  }
+  
